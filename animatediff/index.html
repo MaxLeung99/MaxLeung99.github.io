@@ -1,0 +1,193 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AnimateDiff</title>
+<link href="./AnimateDiff_files/style.css" rel="stylesheet">
+<script type="text/javascript" src="./AnimateDiff_files/jquery.mlens-1.0.min.js"></script> 
+<script type="text/javascript" src="./AnimateDiff_files/jquery.js"></script>
+
+
+<style>
+  p.serif{
+    font-family:"Times New Roman", Times, serif;
+  }
+  p.sansserif{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+</style>
+  
+</head>
+
+<body>
+<div class="content">
+  <h1><strong>AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning</strong></h1>
+</div>
+<div class="content">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Text-to-Video Generation</p>
+  <!-- <p id="authors" class="serif">
+    <a href="mailto:guoyuwei@pjlab.org.cn">Yuwei Guo<sup>1,2</sup></a>
+    <a href="https://ceyuan.me/">Ceyuan Yang<sup>1*</sup></a>
+    <a href="https://anyirao.com/">Anyi Rao<sup>3</sup></a>
+    <a href="https://wyhsirius.github.io/">Yaohui Wang<sup>1</sup></a>
+    <a href="http://mmlab.siat.ac.cn/yuqiao/index.html">Yu Qiao<sup>1</sup></a>
+    <a href="http://dahua.site/">Dahua Lin<sup>1,2</sup></a>
+    <a href="https://daibo.info/">Bo Dai<sup>1</sup></a>
+    <br>
+    <a style="font-size: 0.7em"><sup>*</sup>Corresponding Author.</a>
+    <br>
+    <span style="font-size: 0.8em; margin-top: 0.5em">
+      <a><sup>1</sup>Shanghai AI Laboratory</a>
+      <a><sup>2</sup>The Chinese University of Hong Kong</a>
+      <a><sup>3</sup>Stanford University</a>
+    </span>
+  </p> -->
+
+  <!-- <font size="+1">
+    <p style="text-align: center;" class="serif">
+      <a href="https://arxiv.org/abs/2307.04725" target="_blank" style="font-weight: bold;">[Arxiv Report]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://github.com/guoyww/animatediff/" target="_blank" style="font-weight: bold;">[Github]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#bibtex" style="font-weight: bold;">[BibTeX]</a>
+    </p><br>
+  </font> -->
+
+  <font size="+1">
+    <p class="serif" style="color: red; font-weight: bold">Click to Play the Animations!</p>
+  </font>
+
+  <div class="row">
+    <div class="col">
+      <video class="clickplay" width="100%">
+        <source src="animations/t2v/sdxl1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="col">
+      <video class="clickplay" width="100%">
+        <source src="animations/t2v/sdxl2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="col">
+      <video class="clickplay" width="100%">
+        <source src="animations/t2v/sdxl3.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <video class="clickplay" width="100%">
+        <source src="animations/t2v/sdxl4.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="col">
+      <video class="clickplay" width="100%">
+        <source src="animations/t2v/sdxl5.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="col">
+      <video class="clickplay" width="100%">
+        <source src="animations/t2v/sdxl6.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Controllable Generation</p>
+  <p style="font-size: 1.2em" class="serif">
+    Here we demonstrate controllable generation with various guidance signal.<br>
+    <span style="color: red; font-weight: bold">Click to play the following animations.</span>
+    <!-- We recommend users visit our github repo and play with our pre-trained weights. -->
+  </p>
+
+  <div class="row">
+    <p class="serif" style="font-size: 1.6em; text-align: left; margin: 5px; margin-bottom: 5px;font-weight: bold">Pose</a></p>
+    <div class="col-gallery">
+      <video class="clickplay" width="100%" >
+        <source src="animations/control/pos_original.mp4" type="video/mp4">
+      </video>
+      
+    </div>
+    <div class="col-gallery">
+      <video class="clickplay" width="100%">
+        <source src="animations/control/pose_generated.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  
+  <div class="row" style="margin-top: 10px">
+    <p class="serif" style="font-size: 1.6em; text-align: left; margin: 5px; margin-bottom: 5px;font-weight: bold">Depth</a></p>
+    <div class="col-gallery">
+      <video class="clickplay" width="100%" >
+        <source src="animations/control/depth_original.mp4" type="video/mp4">
+      </video>
+      
+    </div>
+    <div class="col-gallery">
+      <video class="clickplay" width="100%">
+        <source src="animations/control/depth_generated.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 10px">
+    <p class="serif" style="font-size: 1.6em; text-align: left; margin: 5px; margin-bottom: 5px;font-weight: bold">Motion</a></p>
+    <div class="col-gallery">
+      <video class="clickplay" width="100%" >
+        <source src="animations/control/humanepose_original.mp4" type="video/mp4">
+      </video>
+      
+    </div>
+    <div class="col-gallery">
+      <video class="clickplay" width="100%">
+        <source src="animations/control/humanpose_generated.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 10px">
+    <p class="serif" style="font-size: 1.6em; text-align: left; margin: 5px; margin-bottom: 5px;font-weight: bold">Video</a></p>
+    <div class="col">
+      <video class="clickplay" width="100%" >
+        <source src="animations/control/video_original.mp4" type="video/mp4">
+      </video>
+      
+    </div>
+    <div class="col">
+      <video class="clickplay" width="100%">
+        <source src="animations/control/video_generated.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="col">
+      <video class="clickplay" width="100%">
+        <source src="animations/control/video_generated_2.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<div class="content">
+  <p class="serif">
+    Project page template is borrowed from <a href="https://dreambooth.github.io/">DreamBooth</a>.
+  </p>
+</div>
+
+</body>
+
+<script>
+var videos = document.getElementsByClassName("clickplay");
+for (var i = 0; i < videos.length; i++) {
+  videos[i].addEventListener("click", function() {
+    this.play();
+  });
+  videos[i].addEventListener("ended", function() {
+    this.pause();
+    this.currentTime = 0;
+  });
+}
+</script>
+
+</html>
